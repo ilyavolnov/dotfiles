@@ -1,0 +1,9 @@
+[Icons]
+Theme=yet-another-monochrome-icon-set
+
+[KDE]
+ShowDeleteCommand=false
+
+[PreviewSettings]
+EnableRemoteFolderThumbnail=false
+MaximumRemoteSize=0
