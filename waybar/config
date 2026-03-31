@@ -1,0 +1,108 @@
+{
+  "layer": "top",
+  "position": "top",
+  "reload_style_on_change": true,
+  "style": "style.css",
+  "modules-left": ["custom/logo", "custom/pacman", "hyprland/workspaces", "tray"],
+  "modules-center": ["custom/empty"],
+  "modules-right": ["hyprland/language", "network", "pulseaudio", "battery", "custom/notification", "clock"],
+
+  "custom/empty": {
+    "format": ""
+  },
+
+  "custom/logo": {
+    "format": "✦",
+    "tooltip": false
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "●",
+      "2": "■",
+      "3": "◆",
+      "4": "▲",
+      "5": "⬢",
+      "default": "○",
+      "empty": "○"
+    },
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5]
+    }
+  },
+
+  "custom/notification": {
+    "tooltip": false,
+    "format": "",
+    "on-click": "bash -lc 'pgrep -x quickshell >/dev/null || (qs -c ii >/tmp/quickshell.log 2>&1 & sleep 0.25); qs -c ii ipc call controlCenter toggle'",
+    "escape": true
+  },
+
+  "clock": {
+    "locale": "en_US.UTF-8",
+    "format": "{:%a %B %d, %H:%M}",
+    "interval": 1,
+    "tooltip": false,
+    "on-click": "bash -lc 'quickshell ipc -c ii call calendarPopup toggle'"
+  },
+
+  "network": {
+    "format-wifi": "",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "",
+    "tooltip": false,
+    "on-click": "kitty nmtui"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": " 0%",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "scroll-step": 10,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "~/.config/waybar/scripts/volume-menu.sh",
+    "tooltip": false
+  },
+
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "EN",
+    "format-us": "EN",
+    "format-ru": "RU",
+    "format-ru_RU": "RU",
+    "tooltip": false
+  },
+
+  "battery": {
+    "interval": 30,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon}",
+    "format-charging": "",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip": false
+  },
+
+  "custom/pacman": {
+    "format": "{}",
+    "interval": 30,
+    "exec": "count=$(checkupdates | wc -l); if [ $count -eq 0 ]; then echo \"{\\\"text\\\": \\\"● 0 \\\", \\\"class\\\": \\\"ok\\\"}\"; elif [ $count -lt 10 ]; then echo \"{\\\"text\\\": \\\"● $count \\\", \\\"class\\\": \\\"low\\\"}\"; elif [ $count -lt 50 ]; then echo \"{\\\"text\\\": \\\"● $count \\\", \\\"class\\\": \\\"medium\\\"}\"; else echo \"{\\\"text\\\": \\\"● $count \\\", \\\"class\\\": \\\"high\\\"}\"; fi",
+    "exec-if": "exit 0",
+    "on-click": "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+    "signal": 8,
+    "tooltip": false,
+    "return-type": "json"
+  },
+
+  "tray": {
+    "icon-size": 14,
+    "spacing": 10,
+    "show-passive-items": true
+  }
+}

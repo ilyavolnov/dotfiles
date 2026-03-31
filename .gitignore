@@ -43,5 +43,11 @@ wine/
 # Временные файлы
 *.tmp
 *.bak
-*.orig
+*.bak-*
+*.bak.*
+*.save
 *~
+
+# Бэкапы конфигов
+*.backup-*
+*.backup.*

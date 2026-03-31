@@ -1,0 +1,247 @@
+@import url('../../.cache/matugen/colors-waybar.css');
+
+/* ===== Global ===== */
+* {
+    font-size: 15px;
+    font-family: "JetBrainsMono Nerd Font";
+    border: none;
+    box-shadow: none;
+}
+
+window#waybar {
+    all: unset;
+    background: transparent;
+}
+
+/* ===== Containers ===== */
+.modules-left {
+    padding: 6px 12px;
+    margin: 6px 10px 2px 10px;
+    background: @background;
+    border-radius: 14px;
+    border: 1px solid alpha(@foreground, 0.12);
+}
+
+.modules-center {
+    all: unset;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+}
+
+.modules-right {
+    padding: 6px 12px;
+    margin: 6px 10px 2px 10px;
+    background: @background;
+    border-radius: 14px;
+    border: 1px solid alpha(@foreground, 0.12);
+}
+
+/* ===== Base modules ===== */
+#custom-logo,
+#clock,
+#custom-pacman,
+#tray,
+#workspaces,
+#language,
+#network,
+#pulseaudio,
+#battery,
+#custom-notification {
+    padding: 0 13px;
+    margin: 0 4px;
+    border-radius: 999px;
+    min-height: 32px;
+    transition: all 0.15s ease;
+    letter-spacing: 0px;
+}
+
+/* ===== Logo - Four-pointed star ===== */
+#custom-logo {
+    font-size: 20px;
+    color: @color4;
+    background: transparent;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#custom-logo:hover {
+    color: @foreground;
+}
+
+/* ===== Clock ===== */
+#clock {
+    color: @foreground;
+    font-weight: 600;
+    padding: 0 8px;
+    background: transparent;
+    margin-left: 8px;
+}
+
+#clock:hover {
+    background: alpha(@color4, 0.15);
+}
+
+/* ===== Pacman - Wide with gradient effect ===== */
+#custom-pacman {
+    color: @foreground;
+    background: alpha(@color3, 0.15);
+    padding-left: 14px;
+    padding-right: 14px;
+    font-weight: 600;
+}
+
+#custom-pacman.ok {
+    color: @color2;
+    background: alpha(@color2, 0.12);
+}
+
+#custom-pacman.low {
+    color: @color3;
+    background: alpha(@color3, 0.15);
+}
+
+#custom-pacman.medium {
+    color: @color4;
+    background: alpha(@color4, 0.18);
+}
+
+#custom-pacman.high {
+    color: @color1;
+    background: alpha(@color1, 0.2);
+}
+
+#custom-pacman:hover {
+    background: alpha(@color3, 0.25);
+}
+
+/* ===== Tray ===== */
+#tray {
+    padding: 0 6px;
+}
+
+/* ===== Workspaces ===== */
+#workspaces {
+    padding: 0 8px;
+    margin: 0 4px;
+    background: alpha(@foreground, 0.06);
+    border-radius: 999px;
+}
+
+#workspaces button {
+    all: unset;
+    min-width: 32px;
+    padding: 0;
+    margin: 0 4px;
+    color: @color4;
+    border-radius: 999px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#workspaces button:hover {
+    background: alpha(@color4, 0.15);
+}
+
+#workspaces button.active {
+    color: @color0;
+    background: @color4;
+    min-width: 40px;
+    box-shadow: 0 2px 8px alpha(@color4, 0.4);
+}
+
+#workspaces button.empty {
+    color: alpha(@foreground, 0.35);
+}
+
+#workspaces button.empty:hover {
+    color: alpha(@foreground, 0.5);
+    background: alpha(@foreground, 0.08);
+}
+
+#workspaces button.empty.active {
+    color: @color0;
+    background: alpha(@foreground, 0.5);
+}
+
+/* ===== Language ===== */
+#language {
+    color: @color5;
+    background: alpha(@color5, 0.12);
+    font-weight: 500;
+    padding: 0 14px;
+}
+
+#language:hover {
+    background: alpha(@color5, 0.22);
+}
+
+/* ===== Network ===== */
+#network {
+    color: @color6;
+    background: alpha(@color6, 0.12);
+    padding: 0 14px;
+}
+
+#network:hover {
+    background: alpha(@color6, 0.22);
+}
+
+/* ===== Pulseaudio ===== */
+#pulseaudio {
+    color: @color2;
+    background: alpha(@color2, 0.12);
+    padding: 0 14px;
+}
+
+#pulseaudio:hover {
+    background: alpha(@color2, 0.22);
+}
+
+/* ===== Battery ===== */
+#battery {
+    color: @color4;
+    background: alpha(@color4, 0.12);
+    padding: 0 12px;
+}
+
+#battery:hover {
+    background: alpha(@color4, 0.22);
+}
+
+#battery.charging {
+    color: @color2;
+}
+
+#battery.warning:not(.charging) {
+    color: @color3;
+}
+
+#battery.critical:not(.charging) {
+    color: @color1;
+}
+
+/* ===== Notification ===== */
+#custom-notification {
+    color: @foreground;
+    padding: 0 14px;
+    background: alpha(@foreground, 0.1);
+}
+
+#custom-notification:hover {
+    color: @color1;
+    background: alpha(@color1, 0.15);
+}
+
+/* ===== Tooltip ===== */
+tooltip {
+    background: @background;
+    color: @foreground;
+    border-radius: 10px;
+    padding: 10px 14px;
+    border: 1px solid alpha(@foreground, 0.1);
+}
+
+tooltip label {
+    font-size: 13px;
+}
