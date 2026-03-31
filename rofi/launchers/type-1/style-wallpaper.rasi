@@ -1,0 +1,92 @@
+/**
+ * Wallpaper picker (based on type-1)
+ */
+
+configuration {
+    modi:                "drun";
+    show-icons:          true;
+    drun-display-format: "{name}";
+}
+
+@import "shared/colors.rasi"
+@import "shared/fonts.rasi"
+
+* {
+    border-colour:      var(selected);
+    handle-colour:      var(selected);
+    background-colour:  var(background);
+    foreground-colour:  var(foreground);
+    alt-bg:             var(background-alt);
+}
+
+window {
+    transparency:       "real";
+    location:           center;
+    anchor:             center;
+    width:              70%;
+    border:             0px;
+    border-radius:      18px;
+    background-color:   @background-colour;
+}
+
+mainbox {
+    spacing:            10px;
+    padding:            24px;
+    background-color:   transparent;
+    children:           [ "inputbar", "listview" ];
+}
+
+inputbar {
+    spacing:            10px;
+    padding:            0px;
+    background-color:   transparent;
+    text-color:         @foreground-colour;
+    children:           [ "prompt", "textbox-prompt-colon", "entry" ];
+}
+
+prompt { enabled: true; }
+textbox-prompt-colon { enabled: true; str: "::"; }
+entry { placeholder: "Search wallpaper..."; }
+
+listview {
+    columns:            1;
+    lines:              6;
+    cycle:              true;
+    dynamic:            true;
+    scrollbar:          true;
+    fixed-height:       true;
+    fixed-columns:      true;
+    spacing:            10px;
+    background-color:   transparent;
+}
+
+scrollbar {
+    handle-width:       8px;
+    handle-color:       @handle-colour;
+    background-color:   @alt-bg;
+    border-radius:      99px;
+}
+
+element {
+    spacing:            12px;
+    padding:            8px;
+    border-radius:      14px;
+    background-color:   @alt-bg;
+    text-color:         @foreground-colour;
+}
+
+element selected.normal {
+    background-color:   var(selected);
+    text-color:         var(background);
+}
+
+element-icon {
+    size:               220px;
+    border-radius:      10px;
+    background-color:   transparent;
+}
+
+element-text {
+    vertical-align:     0.5;
+    horizontal-align:   0.0;
+}

@@ -1,0 +1,68 @@
+@import url('/home/ilya/.cache/matugen/colors-waybar.css');
+
+@define-color border @color4;
+@define-color text @foreground;
+@define-color bg @background;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "NotoSansMono Nerd Font", "Font Awesome 6 Brands", "JetBrains Mono", "Fira Code", "Inconsolata", "Noto Sans", monospace;
+    color: @text;
+    background: transparent;
+}
+
+#window {
+    background: @background;
+    margin: auto;
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid alpha(@border, 0.82);
+}
+
+#outer-box,
+#inner-box,
+#scroll {
+    background: transparent;
+    border-radius: 16px;
+}
+
+#input {
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    color: @text;
+}
+
+#outer-box {
+    padding: 20px;
+}
+
+#img {
+    margin-right: 8px;
+}
+
+#entry {
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+#entry:selected {
+    background-color: alpha(@color4, 0.14);
+    border: 1px solid alpha(@color4, 0.9);
+}
+
+#text {
+    margin: 2px;
+}
+
+/* hide default GTK search icon in input so custom prompt is the only prefix */
+#input image {
+    opacity: 0;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}

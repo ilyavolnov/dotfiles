@@ -1,0 +1,11 @@
+configuration {
+    modi: "drun,run,filebrowser";
+    show-icons: true;
+    drun-display-format: "{name}";
+    icon-theme: "Papirus-Dark";
+    display-drun: "Apps";
+    display-run: "Run";
+    display-filebrowser: "Files";
+
+    font: "JetBrainsMono Nerd Font 11";
+}

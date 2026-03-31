@@ -1,0 +1,120 @@
+* {
+    bg:              #0b101b;
+    panel:           #111827;
+    panel-soft:      #0f1626;
+    fg:              #e7edf7;
+    fg-dim:          #95a3b8;
+    accent:          #58b8ff;
+    accent-soft:     #58b8ff2a;
+
+    border-col:      #202b40;
+    border:          1px;
+    radius:          18px;
+}
+
+window {
+    location: center;
+    anchor: center;
+    width: 52%;
+    background-color: @bg;
+    border: @border;
+    border-color: @border-col;
+    border-radius: 22px;
+    padding: 16px;
+}
+
+mainbox {
+    spacing: 12px;
+    children: [ inputbar, listview, mode-switcher ];
+}
+
+inputbar {
+    background-color: @panel;
+    border-radius: 12px;
+    padding: 10px 12px;
+    spacing: 10px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    enabled: true;
+    text-color: @fg-dim;
+    str: "󰍉";
+}
+
+entry {
+    text-color: @fg;
+    placeholder: "Search...";
+    placeholder-color: @fg-dim;
+}
+
+listview {
+    background-color: transparent;
+    lines: 10;
+    columns: 2;
+    fixed-columns: true;
+    dynamic: false;
+    cycle: true;
+    scrollbar: true;
+    spacing: 6px;
+    padding: 4px;
+}
+
+scrollbar {
+    width: 6px;
+    border: 0;
+    handle-width: 6px;
+    handle-color: @accent;
+    background-color: #18233a;
+    border-radius: 8px;
+}
+
+element {
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 8px 10px;
+    text-color: @fg;
+}
+
+element selected {
+    background-color: @accent;
+    text-color: #061423;
+}
+
+element-icon {
+    size: 1em;
+    margin: 0 8px 0 0;
+    vertical-align: 0.5;
+}
+
+element-text {
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+mode-switcher {
+    background-color: transparent;
+    spacing: 8px;
+}
+
+button {
+    background-color: @panel-soft;
+    text-color: @fg;
+    border-radius: 999px;
+    padding: 8px 14px;
+}
+
+button selected {
+    background-color: @accent;
+    text-color: #061423;
+}
+
+message {
+    background-color: @panel;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+textbox {
+    text-color: @fg-dim;
+}

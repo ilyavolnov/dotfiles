@@ -1,0 +1,97 @@
+@import url('/home/ilya/.config/wofi/style-common.css');
+
+* {
+    all: unset;
+    font-family: 'JetBrainsMono Nerd Font', monospace;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    text-shadow: none;
+    background-color: transparent;
+    color: @text;
+}
+
+window {
+    all: unset;
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid alpha(@color4,.82);
+    background-color: @background;
+}
+
+#outer-box,
+#inner-box,
+#scroll {
+    background: transparent;
+    border-radius: 16px;
+}
+
+#inner-box {
+    margin: 2px;
+    padding: 5px;
+    border: none;
+}
+
+#outer-box {
+    border: none;
+}
+
+#scroll {
+    margin: 0;
+    padding: 8px;
+    border: none;
+}
+
+#input {
+    all: unset;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 10px 12px;
+    border: 1px solid alpha(@color4,.90);
+    outline: none;
+    color: @text;
+    box-shadow: none;
+    border-radius: 12px;
+    background-color: @color0;
+}
+
+#input image {
+    color: @color9;
+}
+
+#input * {
+    border: none;
+    outline: none;
+}
+
+#text {
+    margin: 5px;
+    border: none;
+    color: @text;
+    outline: none;
+}
+
+#entry {
+    border: none;
+    padding: 8px;
+}
+
+#entry arrow {
+    color: @color7;
+}
+
+#entry:selected {
+    padding: 8px;
+    border: 1px solid alpha(@color4,.9);
+    border-radius: 12px;
+    background-color: alpha(@color4,.14);
+}
+
+#entry:selected #text {
+    color: @text;
+}
+
+#entry:drop(active) {
+    background-color: @color7 !important;
+}

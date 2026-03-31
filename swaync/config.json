@@ -1,0 +1,112 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "positionX": "right",
+  "positionY": "top",
+  "control-center-positionX": "right",
+  "control-center-positionY": "top",
+  "layer": "overlay",
+  "control-center-layer": "top",
+  "layer-shell": true,
+  "cssPriority": "user",
+  "control-center-width": 340,
+  "control-center-height": 610,
+  "control-center-margin-top": 12,
+  "control-center-margin-bottom": 12,
+  "control-center-margin-right": 12,
+  "control-center-margin-left": 0,
+  "notification-2fa-action": true,
+  "notification-inline-replies": false,
+  "notification-window-width": 380,
+  "notification-icon-size": 48,
+  "notification-body-image-height": 180,
+  "notification-body-image-width": 180,
+  "timeout": 8,
+  "timeout-low": 5,
+  "timeout-critical": 0,
+  "fit-to-screen": false,
+  "keyboard-shortcuts": false,
+  "image-visibility": "when-available",
+  "transition-time": 180,
+  "hide-on-clear": false,
+  "hide-on-action": true,
+  "script-fail-notify": true,
+  "widgets": [
+    "title",
+    "volume",
+    "buttons-grid",
+    "notifications"
+  ],
+  "widget-config": {
+    "title": {
+      "text": "Notification Center",
+      "clear-all-button": true,
+      "button-text": "󰆴"
+    },
+    "label": {
+      "max-lines": 1,
+      "text": "Notification Center!"
+    },
+    "mpris": {
+      "image-size": 80,
+      "image-radius": 0
+    },
+    "volume": {
+      "label": "󰕾 "
+    },
+    "buttons-grid": {
+      "actions": [
+        {
+          "label": "󰝟",
+          "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+          "type": "toggle"
+        },
+        {
+          "label": "󰍭",
+          "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+          "type": "toggle"
+        },
+        {
+          "label": "󰖩",
+          "command": "kitty nmtui"
+        },
+        {
+          "label": "",
+          "command": "blueman-manager"
+        },
+        {
+          "label": "󰤄",
+          "command": "swaync-client -d",
+          "type": "toggle"
+        },
+        {
+          "label": "󰀟",
+          "command": "gnome-network-displays"
+        },
+        {
+          "label": "󰈙",
+          "command": "kitty bash -i -c 'Docs'"
+        },
+        {
+          "label": "",
+          "command": "bash -lc 'if command -v gnome-control-center >/dev/null; then gnome-control-center; elif command -v systemsettings >/dev/null; then systemsettings; elif command -v pavucontrol >/dev/null; then pavucontrol; else notify-send Settings_not_found; fi'"
+        },
+        {
+          "label": "",
+          "command": "kitty btop"
+        },
+        {
+          "label": "󰍃",
+          "command": "hyprctl dispatch exit"
+        },
+        {
+          "label": "",
+          "command": "reboot"
+        },
+        {
+          "label": "",
+          "command": "shutdown now"
+        }
+      ]
+    }
+  }
+}

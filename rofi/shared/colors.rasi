@@ -1,0 +1,7 @@
+/**
+ * Dynamic colors from matugen (changes with wallpaper)
+ * Fallback: onedark if generated file is missing.
+ */
+
+@import "~/.cache/matugen/colors-rofi.rasi"
+/* @import "~/.config/rofi/colors/onedark.rasi" */
