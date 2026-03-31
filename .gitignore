@@ -1,0 +1,47 @@
+# Чувствительные данные
+*.key
+*.pub
+id_*
+known_hosts
+known_hosts.old
+oauth_creds.json
+.p10k-instant-prompt-*.zsh
+*.log
+installation_id
+trustdb.gpg
+
+# Кэши
+*.zwc
+.cache/
+.rofi*.cache
+wofi-*
+kioslaverc
+ksycoca6_*.tdb
+event-sound-cache.*
+.dolphin*
+
+# Специфичные для машины
+.projects.json
+.psdata.txt
+.face.icon
+wget-hsts
+
+# VMware
+vmware/
+preferences
+shortcuts
+inventory.vmls
+
+# Wine
+wine/
+
+# История
+.zsh_history
+.python_history
+.viminfo
+
+# Временные файлы
+*.tmp
+*.bak
+*.orig
+*~
