@@ -2,59 +2,108 @@
 
 Мои конфигурационные файлы для Linux (CachyOS/Arch + Hyprland).
 
-## Состав
+## 📁 Структура
 
 ### Shell
-- **Zsh** + Powerlevel10k
-- **Bash**
+| Файл | Описание |
+|------|----------|
+| `.bashrc`, `.bash_profile` | Bash конфиги |
+| `.zshrc`, `.zprofile` | Zsh конфиги |
+| `.p10k.zsh` | Powerlevel10k тема |
+| `fish/config.fish` | Fish shell |
 
 ### Hyprland (Wayland)
-- `hypr/hyprland.conf` - основной конфиг Hyprland
-- `hypr/hypridle.conf` - настройки гибернации/сна
-- `hypr/colors.conf` - цветовая схема
-- `hypr/scripts/` - скрипты для cliphist, refresh UI
+| Файл | Описание |
+|------|----------|
+| `hypr/hyprland.conf` | Основной конфиг Hyprland |
+| `hypr/hypridle.conf` | Настройки сна/гибернации |
+| `hypr/colors.conf` | Цветовая схема |
+| `hypr/scripts/` | Скрипты (cliphist, refresh UI) |
 
 ### Waybar
-- `waybar/config` - основной конфиг
-- `waybar/style.css` - стили
-- `waybar/themes/` - темы (default, experimental, line, zen)
-- `waybar/scripts/` - скрипты для обоев и цветов
-- `waybar/assets/` - изображения
+| Файл | Описание |
+|------|----------|
+| `waybar/config` | Основной конфиг |
+| `waybar/style.css` | Стили |
+| `waybar/themes/` | Темы (default, experimental, line, zen) |
+| `waybar/scripts/` | Скрипты обоев и цветов |
+| `waybar/assets/` | Изображения |
 
-### GTK
-- `gtk/settings-gtk3.ini` - GTK 3
-- `gtk/settings-gtk4.ini` - GTK 4
+### Приложения
+| Директория | Описание |
+|------------|----------|
+| `rofi/` | Rofi launcher (темы, конфиги) |
+| `wofi/` | Wofi launcher |
+| `kitty/` | Терминал Kitty |
+| `btop/` | Монитор системы |
+| `fastfetch/` | Fastfetch конфиги |
+| `swaync/` | Уведомления |
+| `spicetify/` | Spotify темы |
+| `nwg-look/` | GTK темы |
 
-### Другое
-- `.gitconfig` - настройки Git
-- `.Xresources` - X11 ресурсы
-- `.viminfo` - Vim настройки
-- `.yarnrc` - Yarn настройки
-- `hyprcursor/manifest.json` - курсор Hyprcursor
+### Системные
+| Файл | Описание |
+|------|----------|
+| `kde/*` | KDE конфиги (kdeglobals, kiorc) |
+| `qt/qt5ct.conf` | QT5 настройки |
+| `gtk/*` | GTK 3/4 настройки |
+| `hyprcursor/manifest.json` | Курсор |
+| `matugen/` | Генератор цветов |
+| `mimeapps.list` | MIME приложения |
+| `.Xresources` | X11 ресурсы |
 
-## Установка
+### Инструменты
+| Файл | Описание |
+|------|----------|
+| `.gitconfig` | Git настройки |
+| `.viminfo` | Vim |
+| `.yarnrc` | Yarn |
+
+## 🚀 Установка
 
 ```bash
 # Клонируйте репозиторий
 git clone https://github.com/ilyavolnov/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 
-# Установите симлинки
-stow .  # или вручную:
-# ln -sf ~/.dotfiles/.bashrc ~/
-# ln -sf ~/.dotfiles/.zshrc ~/
-# ln -sf ~/.dotfiles/hypr/hyprland.conf ~/.config/hypr/
-# ln -sf ~/.dotfiles/waybar/config ~/.config/waybar/
+# Используйте GNU Stow для симлинков
+stow .  # создаст симлинки всех файлов
+
+# Или вручную выборочно:
+ln -sf ~/.dotfiles/.bashrc ~/
+ln -sf ~/.dotfiles/.zshrc ~/
+ln -sf ~/.dotfiles/hypr/hyprland.conf ~/.config/hypr/
+ln -sf ~/.dotfiles/waybar/config ~/.config/waybar/
 ```
 
-## Зависимости
+## 📦 Зависимости
 
+### Обязательные
 - hyprland
 - waybar
-- wofi / rofi
-- cliphist
-- matugen (опционально)
+- rofi / wofi
+- kitty
 
-## Лицензия
+### Рекомендуемые
+- cliphist
+- matugen
+- spicetify-cli
+- fastfetch
+- btop
+- swaync
+
+## 🎨 Темы
+
+- **Иконки:** YAMIS (Yet Another Monochrome Icon Set)
+- **Курсор:** Bibata / Hyprcursor
+- **Стиль:** Минимализм с кастомными цветами
+
+## ⚙️ Примечания
+
+- Конфиги для CachyOS (Arch-based)
+- Wayland (Hyprland)
+- Некоторые скрипты требуют кастомизации под вашу систему
+
+## 📄 Лицензия
 
 MIT
