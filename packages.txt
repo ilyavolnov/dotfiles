@@ -1,0 +1,35 @@
+# Основные
+hyprland waybar rofi wofi kitty fastfetch btop swaync
+
+# Утилиты
+cliphist clipman grim slurp wl-clipboard swappy
+
+# Темы и оформление
+qt5ct qt6ct nwg-look matugen
+
+# Скрипты
+polkit-kde-agent
+
+# Браузеры
+firefox chromium
+
+# Мультимедиа
+spotify vlc mpv
+
+# Spicetify
+spicetify-cli
+
+# Шрифты
+noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono ttf-font-awesome
+
+# Звук
+pipewire pipewire-pulse pipewire-alsa wireplumber
+
+# Сеть
+networkmanager network-manager-applet
+
+# Файловые менеджеры
+thunar nemo dolphin
+
+# Прочее
+git vim code neovim zsh fish bash
